@@ -27,6 +27,10 @@ in
       packages = with pkgs; [
         firefox
         kate
+        ibus-engines.bamboo
+        cloudflare-warp
+        obsidian
+        libreoffice-qt6
       ];
     };
   };

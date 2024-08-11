@@ -71,6 +71,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable logitech unifying receiver
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
+
   # Enable sound with pipewire.
   # sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -117,8 +121,6 @@
     vscode
     git 
     gh
-    ibus-engines.bamboo
-    cloudflare-warp
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
