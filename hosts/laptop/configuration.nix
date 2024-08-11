@@ -134,8 +134,8 @@
     extraSpecialArgs = { inherit inputs; };
     users = {
       "trivy" = import ./home.nix;
-    }
-  }
+    };
+  };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
