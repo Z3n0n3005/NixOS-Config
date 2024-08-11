@@ -27,27 +27,29 @@ in
       packages = with pkgs; [
         firefox
         kate
-        # neovim
-        # htop-vim
-        # (vscode-with-extensions.override {
-        #   vscodeExtensions = with vscode-extensions; [
-        #     bbenoist.nix
-        #     ms-python.python
-        #     ms-vscode-remote.remote-ssh
-        #     ms-toolsai.jupyter
-        #     vscodevim.vim
-        #     jnoortheen.nix-ide
-        #     dracula-theme.theme-dracula
-        #   ];
-        # })
-        # python3
-        # python312Packages.pip
-        # python312Packages.notebook
-        # python312Packages.jupyterlab
-        # python312Packages.ipykernel  
-        # zoom-us
-        # jupyter    
-        # nix-search-cli
+        neovim
+        htop-vim
+        (vscode-with-extensions.override {
+          vscodeExtensions = with vscode-extensions; [
+            bbenoist.nix
+            ms-python.python
+            ms-vscode-remote.remote-ssh
+            ms-toolsai.jupyter
+            vscodevim.vim
+            jnoortheen.nix-ide
+            dracula-theme.theme-dracula
+          ];
+        })
+        python3
+        python312Packages.pip
+        python312Packages.notebook
+        python312Packages.jupyterlab
+        python312Packages.ipykernel  
+        zoom-us
+        jupyter    
+        nix-search-cli
+        obs-studio
+        libreoffice-qt6
       ];
     };
   };

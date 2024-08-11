@@ -31,6 +31,20 @@ in
         cloudflare-warp
         obsidian
         libreoffice-qt6
+        obs-studio
+        zoom
+
+        (vscode-with-extensions.override {
+          vscodeExtensions = with vscode-extensions; [
+            bbenoist.nix
+            ms-python.python
+            ms-vscode-remote.remote-ssh
+            ms-toolsai.jupyter
+            vscodevim.vim
+            jnoortheen.nix-ide
+            dracula-theme.theme-dracula
+          ];
+        })
       ];
     };
   };
