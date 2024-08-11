@@ -12,18 +12,18 @@
 
   outputs = { self, nixpkgs, ... }@inputs: 
     let
-      system = "x86_64-linux"
+      system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations = {
         default = nixpkgs.lib.nixosSystem {
-          extraSpecialArgs = {inherit inputs;};
+          specialArgs = {inherit inputs;};
           modules = [
             ./hosts/default/configuration.nix
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
-          extraSpecialArgs = {inherit inputs;};     
+          specialArgs = {inherit inputs;};     
           modules = [
             ./host/laptop/configuration.nix
           ];
