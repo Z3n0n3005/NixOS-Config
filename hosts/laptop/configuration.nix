@@ -34,12 +34,13 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.inputMethod.enabled = "ibus";
-
-  i18n.inputMethod.ibus.engines = [ 
-    pkgs.ibus-engines.bamboo 
-  ];
-
+  i18n.inputMethod =  {
+    # type = "ibus";
+    # enable = true;
+    ibus.engines = with pkgs.ibus-engines; [
+      bamboo
+    ];
+  };
   # i18n.inputMethod.ibus.panel = [
   #   "${pkgs.plasma5Packages.plasma-desktop}/libexec/kimpanel-ibus-panel"
   # ];

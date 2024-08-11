@@ -35,6 +35,14 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  i18n.inputMethod =  {
+    # type = "ibus";
+    # enable = true;
+    ibus.engines = with pkgs.ibus-engines; [
+      bamboo
+    ];
+  };
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "vi_VN";
     LC_IDENTIFICATION = "vi_VN";
@@ -47,13 +55,6 @@
     LC_TIME = "vi_VN";
   };
   
-  i18n.inputMethod.type = "ibus";
-  i18n.inputMethod.enable = true;
-
-  i18n.inputMethod.ibus.engines = [
-    pkgs.ibus-engines.bamboo
-  ];
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -121,6 +122,7 @@
     vscode
     git 
     gh
+    ibus
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
