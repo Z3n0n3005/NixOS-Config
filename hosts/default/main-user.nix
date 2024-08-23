@@ -32,7 +32,8 @@ in
         obsidian
         libreoffice-qt6
         obs-studio
-        zoom
+        zoom-us
+        clickup
 
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
