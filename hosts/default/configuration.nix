@@ -36,11 +36,12 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.inputMethod =  {
-    # type = "ibus";
-    # enable = true;
-    ibus.engines = with pkgs.ibus-engines; [
-      bamboo
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-bamboo
     ];
+    fcitx5.waylandFrontend = true;
   };
 
   i18n.extraLocaleSettings = {
@@ -61,7 +62,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -122,7 +122,6 @@
     vscode
     git 
     gh
-    ibus
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

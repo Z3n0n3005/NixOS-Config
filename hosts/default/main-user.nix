@@ -34,6 +34,7 @@ in
         obs-studio
         zoom-us
         clickup
+        ArchiSteamFarm
 
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [

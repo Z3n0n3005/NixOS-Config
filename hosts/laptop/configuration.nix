@@ -35,11 +35,12 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.inputMethod =  {
-    # type = "ibus";
-    # enable = true;
-    ibus.engines = with pkgs.ibus-engines; [
-      bamboo
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-bamboo
     ];
+    fcitx5.waylandFrontend = true;
   };
   # i18n.inputMethod.ibus.panel = [
   #   "${pkgs.plasma5Packages.plasma-desktop}/libexec/kimpanel-ibus-panel"
