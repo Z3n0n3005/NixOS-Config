@@ -29,6 +29,7 @@ in
         kate
         neovim
         htop-vim
+        obsidian
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
             bbenoist.nix
@@ -53,4 +54,13 @@ in
       ];
     };
   };
+
+  i18n.inputMethod =  {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-bamboo
+    ];
+    fcitx5.waylandFrontend = true;
+  }; 
 }

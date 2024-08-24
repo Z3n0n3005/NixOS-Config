@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
@@ -16,10 +21,10 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations = {
-        default = nixpkgs.lib.nixosSystem {
+        workstation = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [
-            ./hosts/default/configuration.nix
+            ./hosts/workstation/configuration.nix
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
