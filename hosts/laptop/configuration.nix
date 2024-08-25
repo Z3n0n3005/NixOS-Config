@@ -35,14 +35,14 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # i18n.inputMethod =  {
-  #   type = "fcitx5";
-  #   enable = true;
-  #   fcitx5.addons = with pkgs; [
-  #     fcitx5-bamboo
-  #   ];
-  #   fcitx5.waylandFrontend = true;
-  # };
+  i18n.inputMethod =  {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-bamboo
+    ];
+    fcitx5.waylandFrontend = true;
+  };
   # i18n.inputMethod.ibus.panel = [
   #   "${pkgs.plasma5Packages.plasma-desktop}/libexec/kimpanel-ibus-panel"
   # ];
@@ -96,46 +96,12 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.trivy = {
-  #    isNormalUser = true;
-  #    description = "TriVy";
-  #    extraGroups = [ 
-  #      "networkmanager" 
-  #      "wheel"
-  #      "docker" 
-  #    ];
-  #    packages = with pkgs; [
-  #     firefox
-  #     kate
-  #     neovim
-  #     htop-vim
-  #     (vscode-with-extensions.override {
-  #       vscodeExtensions = with vscode-extensions; [
-  #         bbenoist.nix
-  #         ms-python.python
-  #         ms-vscode-remote.remote-ssh
-  #         ms-toolsai.jupyter
-  #         vscodevim.vim
-  #         jnoortheen.nix-ide
-  #         dracula-theme.theme-dracula
-  #       ];
-  #     })
-  #     python3
-  #     python312Packages.pip
-  #     python312Packages.notebook
-  #     python312Packages.jupyterlab
-  #     python312Packages.ipykernel  
-  #     zoom-us
-  #     jupyter    
-  #     nix-search-cli
-  #   ];
-  # };
   main-user.enable = true;
   main-user.userName = "trivy";
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
     users = {
       "trivy" = import ./home.nix;
     };

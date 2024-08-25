@@ -15,7 +15,7 @@ in
         cursor = {
           size = 24;
         };
-        wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Mountain/contents/images/5120x2880.png";
+        wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Mountain/contents/images_dark/5120x2880.png";
       };
 
       hotkeys.commands."launch-konsole" = {
@@ -81,7 +81,8 @@ in
               };
             }
           ];
-          hiding = "none";
+          hiding = "dodgewindows";
+          lengthMode = "fit";
           floating = true;
         }
       ];
