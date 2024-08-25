@@ -1,3 +1,7 @@
-{ pkgs, lib, ... } : { 
+{ pkgs, lib, ... } : 
 
+{ 
+  imports = [
+    ./plasma.nix
+  ];
 }

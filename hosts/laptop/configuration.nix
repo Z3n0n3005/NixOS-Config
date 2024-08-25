@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./main-user.nix
+      ../../modules/nixos
       inputs.home-manager.nixosModules.default
     ];
 

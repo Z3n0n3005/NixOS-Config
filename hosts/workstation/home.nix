@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = 
+    [
+      ../../modules/home-manager
+    ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "trivy";
@@ -73,4 +77,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.plasma.enable = true;
+  modules.home-manager.plasma.enable = true;
 }

@@ -1,8 +1,9 @@
-{ pkgs, lib, ... }: {
-  import = 
+{ pkgs, lib, ... }: 
+
+{
+  imports = 
   [
-    ./nixos/default.nix
-    ./services/default.nix
-    ./home-manager/default.nix
-  ]
+    ./nixos
+    ./home-manager
+  ];
 }

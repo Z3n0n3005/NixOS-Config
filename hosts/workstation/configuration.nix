@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      #./cloudflare-warp.nix
       ./main-user.nix
+      ../../modules/nixos
       inputs.home-manager.nixosModules.default
     ];
 
@@ -100,9 +100,12 @@
   main-user.enable = true;
   main-user.userName = "trivy";
 
+  # modules.desktop.plasma.enable = true;
+  
   home-manager = {
     # pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
+    sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
     users = {
       "trivy" = import ./home.nix;
     };
