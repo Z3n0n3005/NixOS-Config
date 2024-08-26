@@ -27,14 +27,16 @@ in
       packages = with pkgs; [
         firefox
         kate
-        ibus-engines.bamboo
-        cloudflare-warp
         obsidian
         libreoffice-qt6
         obs-studio
         zoom-us
+        teams-for-linux
         clickup
         ArchiSteamFarm
+        vlc
+        htop-vim
+        gnucash
 
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
@@ -49,8 +51,5 @@ in
         })
       ];
     };
-    
   };
-
-  
 }

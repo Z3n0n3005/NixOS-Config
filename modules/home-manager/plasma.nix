@@ -131,6 +131,7 @@ in
       kscreenlocker = {
         lockOnResume = true;
         timeout = 10;
+        appearance.wallpaper = lib.mkForce "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Mountain/contents/images_dark/5120x2880.png";
       };
 
       #
@@ -162,12 +163,12 @@ in
           # Forces kde to not change this value (even through the settings app).
           immutable = true;
         };
-        kscreenlockerrc = {
-          Greeter.WallpaperPlugin = "org.kde.potd";
-          # To use nested groups use / as a separator. In the below example,
-          # Provider will be added to [Greeter][Wallpaper][org.kde.potd][General].
-          "Greeter/Wallpaper/org.kde.potd/General".Provider = "bing";
-        };
+        # kscreenlockerrc = {
+        #   Greeter.WallpaperPlugin = "org.kde.potd";
+        #   # To use nested groups use / as a separator. In the below example,
+        #   # Provider will be added to [Greeter][Wallpaper][org.kde.potd][General].
+        #   "Greeter/Wallpaper/org.kde.potd/General".Provider = "bing";
+        # };
       }; 
     };
   };

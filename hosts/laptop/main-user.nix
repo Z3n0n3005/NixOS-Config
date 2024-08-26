@@ -30,6 +30,7 @@ in
         neovim
         htop-vim
         obsidian
+        gnucash
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
             bbenoist.nix
@@ -47,10 +48,12 @@ in
         python312Packages.jupyterlab
         python312Packages.ipykernel  
         zoom-us
+        teams-for-linux
         jupyter    
         nix-search-cli
         obs-studio
         libreoffice-qt6
+        vlc
       ];
     };
   };

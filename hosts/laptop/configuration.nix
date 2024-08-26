@@ -106,6 +106,10 @@
       "trivy" = import ./home.nix;
     };
   };
+
+  # Additional modules
+  modules.services.cloudflare-warp.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

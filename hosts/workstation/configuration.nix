@@ -26,7 +26,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
   # Experimental
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Set your time zone.
@@ -111,8 +110,12 @@
     };
   };
 
+  # Custom modules
+  modules.services.cloudflare-warp.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
