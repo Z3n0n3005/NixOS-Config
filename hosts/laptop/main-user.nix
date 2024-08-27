@@ -54,6 +54,7 @@ in
         obs-studio
         libreoffice-qt6
         vlc
+        clickup
       ];
     };
   };
