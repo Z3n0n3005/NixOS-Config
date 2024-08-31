@@ -5,7 +5,7 @@ let
 
 in {
   options.modules.services.cloudflare-warp = {
-      enable = lib.mkEnableOption "Enable plasma configuration";
+      enable = lib.mkEnableOption "Enable Cloudflare WARP service";
   };
 
   config = lib.mkIf cfg.enable {

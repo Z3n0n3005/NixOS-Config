@@ -31,12 +31,13 @@ in
         libreoffice-qt6
         obs-studio
         zoom-us
-        teams-for-linux
+        # teams-for-linux
         clickup
-        ArchiSteamFarm
+        # ArchiSteamFarm
         vlc
         htop-vim
         gnucash
+        gitleaks
 
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
@@ -50,6 +51,7 @@ in
           ];
         })
       ];
+      
     };
   };
 }
