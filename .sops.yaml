@@ -1,0 +1,7 @@
+keys:
+  - &workstation age1q79a9wuju954vmfmklvrkkels5lr4pf496yzh9c2jfnfvj87m56symyyt5
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+      - age:
+        - *workstation

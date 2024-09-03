@@ -38,6 +38,8 @@ in
         htop-vim
         gnucash
         gitleaks
+        sops
+        age
 
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
