@@ -3,6 +3,8 @@
 let
   cfg = config.modules.services.archisteamfarm;
   username_path = config.sops.secrets."services/archisteamfarm/bots/cardidling/username".path;
+  username_cat = pkgs.runCommand "get_asf_username" {} ''cat ${username_path}'';
+  cfg_username = config.main-user.userName;
 in {
   options.modules.services.archisteamfarm = {
     enable = lib.mkEnableOption "Enable ArchiSteamFarm service";
@@ -13,7 +15,8 @@ in {
     
     sops.secrets."services/archisteamfarm/bots/cardidling/username" = {
       restartUnits = ["archisteamfarm.service"];
-      owner = config.main-user.userName;
+      # owner = config.main-user.userName;
+      owner = cfg_username;
     };
     sops.secrets."services/archisteamfarm/bots/cardidling/password" = {
       restartUnits = ["archisteamfarm.service"];
@@ -32,8 +35,14 @@ in {
       bots = {
         cardidling = {
           enabled = true;
-          username = pkgs.runCommand "get_asf_username" {} ''cat ${username_path}'';
-          passwordFile = config.sops.secrets."services/archisteamfarm/bots/cardidling/password".path;
+          # username = pkgs.runCommand "get_asf_username" {} ''cat ${username_path}'';
+          # username = username_cat;
+          # username = builtins.readFile (lib.sops-decrypt {
+          #   path = ../secrets.yaml;
+          #   privateKeysFile = /home/${cfg_username}/.config/sops/age/keys.txt;
+
+          # });
+          # passwordFile = config.sops.secrets."services/archisteamfarm/bots/cardidling/password".path;
           settings = {
             CustomGamePlayedWhileFarming = "Card Idling";
             OnlineStatus = 3;

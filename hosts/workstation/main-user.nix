@@ -40,6 +40,7 @@ in
         gitleaks
         sops
         age
+        unzip
 
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
