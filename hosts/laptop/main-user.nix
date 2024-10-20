@@ -42,13 +42,15 @@ in
             dracula-theme.theme-dracula
           ];
         })
+        poetry
         python3
         python312Packages.pip
         python312Packages.notebook
         python312Packages.jupyterlab
         python312Packages.ipykernel  
+        
         zoom-us
-        teams-for-linux
+        # teams-for-linux
         jupyter    
         nix-search-cli
         obs-studio

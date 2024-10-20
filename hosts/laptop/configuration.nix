@@ -11,7 +11,7 @@
       ./main-user.nix
       ../../modules/nixos
       inputs.home-manager.nixosModules.default
-      inputs.sops-nix.nixosModules.sops
+      # inputs.sops-nix.nixosModules.sops
     ];
 
   # Bootloader.
@@ -80,6 +80,8 @@
   # Enable sound with pipewire.
   # sound.enable = true;
   hardware.pulseaudio.enable = false;
+  hardware.bluetooth.enable = true;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

@@ -24,9 +24,9 @@ in {
     };
 
 
-    services.archisteamfarm = {
-      enable = true;
-      web-ui.enable = true;
+    # services.archisteamfarm = {
+    #   enable = true;
+    #   web-ui.enable = true;
 
       settings = {
         DefaultBot = "Card Idling";
