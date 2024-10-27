@@ -50,10 +50,18 @@ in
             ms-vscode-remote.remote-ssh
             ms-toolsai.jupyter
             vscodevim.vim
+
             jnoortheen.nix-ide
+            
+            # Syntax appearance
+            mechatroner.rainbow-csv
+            usernamehw.errorlens
+            
+            # Theme
             dracula-theme.theme-dracula
           ];
         })
+        poetry
       ];
       
     };
