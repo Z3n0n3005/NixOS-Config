@@ -31,7 +31,6 @@ in
         libreoffice-qt6
         obs-studio
         zoom-us
-        # teams-for-linux
         clickup
         # ArchiSteamFarm
         vlc
@@ -49,6 +48,7 @@ in
             ms-python.python
             ms-vscode-remote.remote-ssh
             ms-toolsai.jupyter
+            ms-azuretools.vscode-docker
             vscodevim.vim
 
             jnoortheen.nix-ide
@@ -62,6 +62,9 @@ in
           ];
         })
         poetry
+        # postgresql
+        prismlauncher
+        mcaselector
       ];
       
     };
