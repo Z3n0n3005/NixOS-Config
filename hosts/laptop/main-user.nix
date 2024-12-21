@@ -57,6 +57,7 @@ in
         libreoffice-qt6
         vlc
         clickup
+        qbittorrent
       ];
     };
   };
