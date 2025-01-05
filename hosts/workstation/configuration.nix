@@ -27,6 +27,13 @@
     };
   };
 
+  # AMD GPU stuffs
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  # AMD GPU HIP workaround
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+
   networking.hostName = "nixos"; # Define your hostname.
 
   # Enable networking
@@ -103,7 +110,7 @@
     # pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
     sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
-    users = {
+    users ={
       "trivy" = import ./home.nix;
     };
   };
