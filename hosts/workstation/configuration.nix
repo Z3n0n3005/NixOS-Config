@@ -29,6 +29,7 @@
 
   # AMD GPU stuffs
   boot.initrd.kernelModules = [ "amdgpu" ];
+
   # AMD GPU HIP workaround
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
@@ -38,7 +39,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  # Experimental
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+  # Experimenta
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";
@@ -88,7 +91,7 @@
   hardware.logitech.wireless.enableGraphical = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

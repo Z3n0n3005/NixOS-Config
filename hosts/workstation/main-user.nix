@@ -53,21 +53,30 @@ in
 
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
+            # Nix extensions
             bbenoist.nix
-            ms-python.python
-            ms-vscode-remote.remote-ssh
-            ms-toolsai.jupyter
-            ms-azuretools.vscode-docker
-            vscodevim.vim
-
             jnoortheen.nix-ide
+            
+            # Python extensions
+            ms-python.python
+            ms-python.debugpy
+            ms-python.pylint
+            ms-python.vscode-pylance
+            ms-toolsai.jupyter
+
+            # SSH extension
+            ms-vscode-remote.remote-ssh
+            ms-azuretools.vscode-docker
+            
+            # Terraform
+            hashicorp.terraform
+            
+            # Utilities
+            vscodevim.vim
             
             # Syntax appearance
             mechatroner.rainbow-csv
             usernamehw.errorlens
-            
-            # Theme
-            dracula-theme.theme-dracula
           ];
         })
         poetry
