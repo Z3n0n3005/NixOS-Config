@@ -24,6 +24,12 @@ in
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
+    
+    programs.gamemode.enable = true;
+
+    programs.tmux = {
+      enable = true;
+    };
 
     users.users.${cfg.userName} = {
       isNormalUser = true;
@@ -35,7 +41,7 @@ in
       ];
       packages = with pkgs; [
         firefox
-        kate
+        kdePackages.kate
         obsidian
         libreoffice-qt6
         obs-studio
@@ -49,7 +55,6 @@ in
         sops
         age
         unzip
-        masterpdfeditor
 
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
@@ -60,7 +65,7 @@ in
             # Python extensions
             ms-python.python
             ms-python.debugpy
-            ms-python.pylint
+            charliermarsh.ruff
             ms-python.vscode-pylance
             ms-toolsai.jupyter
 
@@ -80,11 +85,11 @@ in
           ];
         })
         poetry
+        anki
         # postgresql
         prismlauncher
         mcaselector
-        gimp
-
+        
         # blender-hip
       ];
       

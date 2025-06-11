@@ -98,7 +98,7 @@ in
 
         window-rules = [
           {
-            description = "All full screen initially";
+            description = "All full screen initially.";
             match = {
               window-types = [ "normal" ];
             };
@@ -107,6 +107,19 @@ in
               maximizevert = true;
             };
           }
+          # {
+          #   description = "Bitwarden login pop up.";
+          #   match = {
+          #     title = {
+          #       value = "Extension: (Bitwarden Password Manager) - Bitwarden — Mozilla Firefox";
+          #       type = "exact";
+          #     };
+          #     window-types = [ "normal" ];
+          #   };
+          #   apply = {
+
+          #   }
+          # }
         ];
 
         powerdevil = {
