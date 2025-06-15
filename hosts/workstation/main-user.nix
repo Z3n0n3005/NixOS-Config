@@ -55,7 +55,13 @@ in
         sops
         age
         unzip
-
+        poetry
+        anki
+        # postgresql
+        prismlauncher
+        mcaselector
+        
+        # blender-hip
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
             # Nix extensions
@@ -84,13 +90,7 @@ in
             usernamehw.errorlens
           ];
         })
-        poetry
-        anki
-        # postgresql
-        prismlauncher
-        mcaselector
-        
-        # blender-hip
+
       ];
       
     };

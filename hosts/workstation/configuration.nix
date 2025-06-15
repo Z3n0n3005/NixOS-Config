@@ -65,7 +65,7 @@
     # connect xbox controller
   };
 
-  # Experimenta
+  # Experimental
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";

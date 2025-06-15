@@ -26,38 +26,49 @@ in
       ];
       packages = with pkgs; [
         firefox
-        kate
+        kdePackages.kate
         neovim
         htop-vim
         obsidian
         gnucash
-        (vscode-with-extensions.override {
-          vscodeExtensions = with vscode-extensions; [
-            bbenoist.nix
-            ms-python.python
-            ms-vscode-remote.remote-ssh
-            ms-toolsai.jupyter
-            vscodevim.vim
-            jnoortheen.nix-ide
-            dracula-theme.theme-dracula
-          ];
-        })
         poetry
-        python3
-        python312Packages.pip
-        python312Packages.notebook
-        python312Packages.jupyterlab
-        python312Packages.ipykernel  
-        
+        anki
         zoom-us
-        # teams-for-linux
-        jupyter    
         nix-search-cli
         obs-studio
         libreoffice-qt6
         vlc
         clickup
         qbittorrent
+        (vscode-with-extensions.override {
+          vscodeExtensions = with vscode-extensions; [
+            # Nix extensions
+            bbenoist.nix
+            jnoortheen.nix-ide
+            
+            # Python extensions
+            ms-python.python
+            ms-python.debugpy
+            charliermarsh.ruff
+            ms-python.vscode-pylance
+            ms-toolsai.jupyter
+
+            # SSH extension
+            ms-vscode-remote.remote-ssh
+            ms-azuretools.vscode-docker
+            
+            # Terraform
+            hashicorp.terraform
+            
+            # Utilities
+            vscodevim.vim
+            
+            # Syntax appearance
+            mechatroner.rainbow-csv
+            usernamehw.errorlens
+          ];
+        })
+
       ];
     };
   };
