@@ -91,6 +91,8 @@ in
           ];
         })
 
+        # Games not on steam
+        unciv
       ];
       
     };
