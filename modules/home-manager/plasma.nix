@@ -134,7 +134,8 @@ in
               idleTimeout = 600;
             };
             turnOffDisplay = {
-              idleTimeout = "never";
+              idleTimeout = 1200;
+              idleTimeoutWhenLocked = "immediately";
             };
           };
           battery = {
