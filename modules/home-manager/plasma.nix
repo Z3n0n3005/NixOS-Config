@@ -127,11 +127,14 @@ in
             powerButtonAction = "lockScreen";
             autoSuspend = {
               action = "sleep";
+              idleTimeout = 900;
+            };
+            dimDisplay = {
+              enable = true;
               idleTimeout = 600;
             };
             turnOffDisplay = {
-              idleTimeout = 300;
-              idleTimeoutWhenLocked = "immediately";
+              idleTimeout = "never";
             };
           };
           battery = {
