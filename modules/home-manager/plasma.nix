@@ -2,6 +2,7 @@
 
 let
   cfg = config.modules.home-manager.plasma;
+  # hostlist = builtins.toJSON(builtins.attrNames inputs.self.nixosConfigurations);
 in
 {
   options.modules.home-manager.plasma = {
@@ -97,16 +98,6 @@ in
         ];
 
         window-rules = [
-          {
-            description = "All full screen initially.";
-            match = {
-              window-types = [ "normal" ];
-            };
-            apply = {
-              maximizehoriz = true;
-              maximizevert = true;
-            };
-          }
           {
             description = "Bitwarden login pop up.";
             match = {

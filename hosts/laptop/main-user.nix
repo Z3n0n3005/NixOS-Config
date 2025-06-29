@@ -69,6 +69,16 @@ in
           ];
         })
 
+        # NixOS related stuffs
+        nix-output-monitor
+        nix-tree
+        
+        # Nix Linter and LSP
+        nixfmt-rfc-style
+        nixd
+
+        # Dealing with screen issues:
+        xorg.libxcvt
       ];
     };
   };

@@ -58,11 +58,24 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  hardware.nvidia.open =  true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  # services.xserver.displayManager.defaultSession = "hyprland";
+
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    # Set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # makr sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    # Set this in case of compatibility issue
+    xwayland.enable = true; 
+  };
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -123,6 +136,8 @@
     docker
     git
     gh
+    # For Hyprland
+    kitty
   ];
 
   virtualisation.docker.enable = true;
