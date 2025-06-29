@@ -61,7 +61,6 @@ in
         prismlauncher
         mcaselector
         
-        # blender-hip
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
             # Nix extensions
@@ -90,6 +89,17 @@ in
             usernamehw.errorlens
           ];
         })
+
+        # For modding games
+        steamtinkerlaunch
+        
+        # NixOS related stuffs
+        nix-output-monitor
+        nix-tree
+        
+        # Nix Linter and LSP
+        nixfmt-rfc-style
+        nixd
 
         # Games not on steam
         unciv

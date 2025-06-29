@@ -107,19 +107,35 @@ in
               maximizevert = true;
             };
           }
-          # {
-          #   description = "Bitwarden login pop up.";
-          #   match = {
-          #     title = {
-          #       value = "Extension: (Bitwarden Password Manager) - Bitwarden — Mozilla Firefox";
-          #       type = "exact";
-          #     };
-          #     window-types = [ "normal" ];
-          #   };
-          #   apply = {
-
-          #   }
-          # }
+          {
+            description = "Bitwarden login pop up.";
+            match = {
+              title = {
+                value = "Bitwarden";
+                type = "regex";
+              };
+              window-class = {
+                value = "firefox";
+                type = "exact";
+                match-whole = false;
+              };
+              window-types = [ "normal" ];
+            };
+            apply = {
+              size = {
+                value = "382, 544";
+                apply = "force";
+              };
+              position = {
+                value = "795, 270";
+                apply = "force";
+              };
+              ignoregeometry = {
+                apply = "force";
+                value = true;
+              };
+            };
+          }
         ];
 
         powerdevil = {
@@ -127,7 +143,7 @@ in
             powerButtonAction = "lockScreen";
             autoSuspend = {
               action = "sleep";
-              idleTimeout = 900;
+              idleTimeout = 1800;
             };
             dimDisplay = {
               enable = true;
@@ -148,9 +164,9 @@ in
         };
 
         kwin = {
-          edgeBarrier = 0; # Disables the edge-barriers introduced in plasma 6.1
+          # Disables the edge-barriers introduced in plasma 6.1
+          edgeBarrier = 0; 
           cornerBarrier = false;
-
           # scripts.polonium.enable = true;
         };
 

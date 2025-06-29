@@ -1,6 +1,22 @@
 # NixOS-Config
 Configuration for NixOS
 
+## Update flake inputs and dependencies
+```bash
+nix-flake-update
+```
+Should be run before [updating packages](#update-packages)
+
+## Update packages
+```bash
+nixos-rebuild switch --sudo --upgrade --flake ./hosts#{host}
+```
+If there is nom just add
+```
+|& sudo nom 
+```
+at the end. 
+
 ## Note of what to do when boot drive is full
 This may happens occasionally when you forget to remove the older generations. This errors may occurs when you Grub try to update but does not have enough disk space. In this case, run the following commands to clean up your computer:
 

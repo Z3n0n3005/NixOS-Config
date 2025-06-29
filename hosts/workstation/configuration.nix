@@ -143,7 +143,9 @@
   home-manager = {
     # pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
-    sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+    sharedModules = [ 
+      inputs.plasma-manager.homeManagerModules.plasma-manager 
+    ];
     users ={
       "trivy" = import ./home.nix;
     };
