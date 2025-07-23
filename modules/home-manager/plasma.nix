@@ -127,6 +127,28 @@ in
               };
             };
           }
+
+          # {
+          #   description = "Obsidian designated window.";
+          #   match = {
+          #     window-class = {
+          #       value = "obsidian";
+          #       type = "regex";
+          #       match-whole = false;
+          #     };
+          #     window-types = [ "normal" ];
+          #   };
+          #   apply = {
+          #     virtualdesktops = {
+          #       value = ["4: Desktop 5"];
+          #       apply = "initially";
+          #     };
+          #     desktops = {
+          #       value = ["4: Desktop 5"];
+          #       apply = "initially";
+          #     };
+          #   };
+          # }
         ];
 
         powerdevil = {

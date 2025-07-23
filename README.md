@@ -3,7 +3,7 @@ Configuration for NixOS
 
 ## Update flake inputs and dependencies
 ```bash
-nix-flake-update
+nix flake update
 ```
 Should be run before [updating packages](#update-packages)
 
@@ -17,6 +17,10 @@ If there is nom just add
 ```
 at the end. 
 
+If `nh` is available use:
+```bash
+nh os switch --ask --hostname {host} .
+```
 ## Note of what to do when boot drive is full
 This may happens occasionally when you forget to remove the older generations. This errors may occurs when you Grub try to update but does not have enough disk space. In this case, run the following commands to clean up your computer:
 

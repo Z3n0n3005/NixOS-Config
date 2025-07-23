@@ -96,6 +96,7 @@ in
         # NixOS related stuffs
         nix-output-monitor
         nix-tree
+        nh
         
         # Nix Linter and LSP
         nixfmt-rfc-style
