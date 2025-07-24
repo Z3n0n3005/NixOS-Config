@@ -15,8 +15,30 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = false;
+      extraEntries = 
+        # "# GRUB 2 example
+        # menuentry \"Tiny 11\" {  
+        # chainloader (hd0,4)+1\n}\n\n# GRUB 2 with UEFI example, chainloading another distro\nmenuentry \"Fedora\" {\n  set root=(hd1,1)\n  chainloader /efi/fedora/grubx64.efi\n}\n";
+        "menuentry \"Tiny 11 (External SSD)\" {
+          insmod part_msdos
+          insmod ntfs
+          insmod fat
+          search --set=root --fs-uuid F0CD-FB06  # From `blkid /dev/sdc2`
+          chainloader /EFI/Boot/bootx64.efi  # Default path for Tiny11
+        }
+      ";
+      extraConfig = "set timeout=5";
+    };
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
